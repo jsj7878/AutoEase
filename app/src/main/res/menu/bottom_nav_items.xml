@@ -16,5 +16,5 @@
     <item
         android:id = "@+id/mapFragment"
         android:icon="@drawable/ic_map"
-        android:title="Map" />
+        android:title="Map " />
 </menu>
