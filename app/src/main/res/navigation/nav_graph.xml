@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.yj.autoease.fragments.MainFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/carDetailFragment"
+        android:name="com.yj.autoease.fragments.CarDetailFragment"
+        android:label="fragment_car_detail"
+        tools:layout="@layout/fragment_car_detail" />
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.yj.autoease.fragments.CalendarFragment"
+        android:label="fragment_calendar"
+        tools:layout="@layout/fragment_calendar" />
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.yj.autoease.fragments.MapFragment"
+        android:label="Map"
+        tools:layout="@layout/fragment_map" />
+</navigation>
