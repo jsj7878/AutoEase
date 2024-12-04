@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "651280409891",
+    "project_id": "autoease-23918",
+    "storage_bucket": "autoease-23918.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:651280409891:android:4c11a6a3ff189c4e4dd896",
+        "android_client_info": {
+          "package_name": "com.yj.autoease"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTUHAFp5KwbdeMtOInbhp026knhc-ng20"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
