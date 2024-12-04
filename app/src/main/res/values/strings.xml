@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Autoease</string>
+    <string name="register_message">차량 등록을 위해\n차량 번호를 입력해주세요</string>
 </resources>
