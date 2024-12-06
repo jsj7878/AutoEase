@@ -3,4 +3,5 @@
     <string name="register_message">차량 등록을 위해\n차량 번호를 입력해주세요</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_schedule_button"><![CDATA[<u>일정 추가하기</u>]]></string>
 </resources>
