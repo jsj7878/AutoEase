@@ -57,4 +57,11 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:2.8.3")
 
     implementation(libs.material.calendarview)
+
+    //지도
+    implementation("com.naver.maps:map-sdk:3.20.0")
+
+    //코루틴
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 }
