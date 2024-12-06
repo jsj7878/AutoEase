@@ -24,23 +24,22 @@
 
                 <!-- ImageView -->
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/vehicleNumberTextView"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
                     android:background="@drawable/round_corner_border"
-                    android:gravity="center_vertical"
+                    android:gravity="bottom|center_horizontal"
                     android:padding="16dp"
-                    android:text="123"
-                    android:textColor="@android:color/white"
-                    android:textSize="20sp" />
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
                 <ImageView
                     android:id="@+id/imageView"
                     android:layout_width="300dp"
                     android:layout_height="200dp"
-                    android:layout_above="@id/textView"
+                    android:layout_above="@id/vehicleNumberTextView"
                     android:layout_centerHorizontal="true"
                     android:layout_marginBottom="-100dp"
                     android:src="@drawable/carimage" />
@@ -146,21 +145,39 @@
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/noLatestTextView"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="40dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
                     android:gravity="center"
-                    android:text="TextView"
-                    android:textSize="48sp" />
+                    android:text="정비 기록이 없습니다"
+                    android:textSize="20sp" />
 
-                <TextView
-                    android:id="@+id/textView4"
+                <LinearLayout
+                    android:id="@+id/latestWrapper"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="40dp"
-                    android:gravity="end"
-                    android:text="TextView" />
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/latestDateTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="TextView"
+                        android:textSize="48sp" />
+
+                    <TextView
+                        android:id="@+id/latestContentTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:gravity="end"
+                        android:text="TextView" />
+                </LinearLayout>
+
             </LinearLayout>
 
         </LinearLayout>

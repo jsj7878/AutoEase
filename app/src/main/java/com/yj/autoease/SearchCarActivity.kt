@@ -52,28 +52,26 @@ class SearchCarActivity : AppCompatActivity() {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if(s?.length == 9) {
-                    if(s.toString() == "123가 4567") {
-                        searchEditText.inputType = InputType.TYPE_NULL
-                        spinner.visibility = View.VISIBLE
+                    searchEditText.inputType = InputType.TYPE_NULL
+                    spinner.visibility = View.VISIBLE
 
-                        lifecycleScope.launch {
-                            delay(2000)
+                    lifecycleScope.launch {
+                        delay(2000)
 
-                            modelRow.visibility = View.VISIBLE
-                            modelRow.startAnimation(slideInAnim)
+                        modelRow.visibility = View.VISIBLE
+                        modelRow.startAnimation(slideInAnim)
 
-                            delay(2000)
+                        delay(2000)
 
-                            modelYearRow.visibility = View.VISIBLE
-                            modelYearRow.startAnimation(slideInAnim)
+                        modelYearRow.visibility = View.VISIBLE
+                        modelYearRow.startAnimation(slideInAnim)
 
-                            delay(2000)
-                            frameRow.visibility = View.VISIBLE
-                            frameRow.startAnimation(slideInAnim)
-                            loginButtonWrapper.visibility = View.VISIBLE
+                        delay(2000)
+                        frameRow.visibility = View.VISIBLE
+                        frameRow.startAnimation(slideInAnim)
+                        loginButtonWrapper.visibility = View.VISIBLE
 
-                            spinner.visibility = View.GONE
-                        }
+                        spinner.visibility = View.GONE
                     }
                 }
             }
