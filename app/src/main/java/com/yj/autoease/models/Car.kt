@@ -1,13 +1,13 @@
 package com.yj.autoease.models
 
 data class Car(
-    val id: String,
-    val userId: String,
-    val vehicleNumber: String,
-    var isPowerOn: Boolean,
-    var isDoorOpen: Boolean,
-    var temperature: Double,
-    var fuel: Int,
-    var tirePressure: Int,
-    var schedules: MutableList<Schedule>
+    val id: String = "",
+    val userId: String = "",
+    val vehicleNumber: String = "",
+    var isPowerOn: Boolean = false,
+    var isDoorOpen: Boolean = false,
+    var temperature: Double = 0.0,
+    var fuel: Int = 0,
+    var tirePressure: Int = 0,
+    var schedules: MutableList<Schedule> = mutableListOf()
 )
