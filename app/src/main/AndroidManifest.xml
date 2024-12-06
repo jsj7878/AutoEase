@@ -42,6 +42,9 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+        <meta-data
+            android:name="com.naver.maps.map.CLIENT_ID"
+            android:value="08nq8yjkey" />
     </application>
 
 </manifest>
