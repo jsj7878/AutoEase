@@ -89,6 +89,7 @@ class SearchCarActivity : AppCompatActivity() {
             val newCar = Car("", userId, searchEditText.text.toString(),
                 isPowerOn = false,
                 isDoorOpen = false,
+                isSoundOn = false,
                 temperature = 36.5,
                 fuel = 100,
                 tirePressure = 30,

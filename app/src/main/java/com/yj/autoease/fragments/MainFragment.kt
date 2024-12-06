@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -43,15 +44,22 @@ class MainFragment : Fragment() {
         latestDateTextView = view.findViewById(R.id.latestDateTextView)
         latestContentTextView = view.findViewById(R.id.latestContentTextView)
 
-        for (button in buttonArray){
-            if(button.id == R.id.buttonLock){
-                button.setOnClickListener {
-                    button.isSelected = !button.isSelected
-                    button.setImageResource(if (button.isSelected) R.drawable.ic_lock else R.drawable.ic_lockopen)
+        for (button in buttonArray) {
+            when(button.id) {
+                R.id.buttonLock -> {
+                    button.setOnClickListener {
+                        updateLock(button)
+                    }
                 }
-            } else{
-                button.setOnClickListener {
-                    button.isSelected = !button.isSelected
+                R.id.buttonPower -> {
+                    button.setOnClickListener {
+                        updatePower(button)
+                    }
+                }
+                R.id.buttonSound -> {
+                    button.setOnClickListener {
+                        updateSound(button)
+                    }
                 }
             }
         }
@@ -96,6 +104,79 @@ class MainFragment : Fragment() {
                         noLatestTextView.visibility = View.GONE
                     }
                 }
+            }
+            .addOnFailureListener { exception ->
+                // 오류 처리
+                println("Error getting documents: $exception")
+            }
+    }
+
+    private fun updateLock(button: ImageButton) {
+        val auth = FirebaseAuth.getInstance()
+        val userId = auth.currentUser?.uid
+
+        if(userId == null) {
+            Toast.makeText(requireContext(), "로그인 유저 정보가 없습니다", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        val db = Firebase.firestore
+
+        db.collection("cars")
+            .document(car.id)
+            .update("isDoorOpen", !car.isDoorOpen)
+            .addOnSuccessListener {
+                car.isDoorOpen = !car.isDoorOpen
+                button.isSelected = !button.isSelected
+                button.setImageResource(if (button.isSelected) R.drawable.ic_lock else R.drawable.ic_lockopen)
+            }
+            .addOnFailureListener { exception ->
+                // 오류 처리
+                println("Error getting documents: $exception")
+            }
+    }
+
+    private fun updatePower(button: ImageButton) {
+        val auth = FirebaseAuth.getInstance()
+        val userId = auth.currentUser?.uid
+
+        if(userId == null) {
+            Toast.makeText(requireContext(), "로그인 유저 정보가 없습니다", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        val db = Firebase.firestore
+
+        db.collection("cars")
+            .document(car.id)
+            .update("isPowerOn", !car.isPowerOn)
+            .addOnSuccessListener {
+                car.isPowerOn = !car.isPowerOn
+                button.isSelected = !button.isSelected
+            }
+            .addOnFailureListener { exception ->
+                // 오류 처리
+                println("Error getting documents: $exception")
+            }
+    }
+
+    private fun updateSound(button: ImageButton) {
+        val auth = FirebaseAuth.getInstance()
+        val userId = auth.currentUser?.uid
+
+        if(userId == null) {
+            Toast.makeText(requireContext(), "로그인 유저 정보가 없습니다", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        val db = Firebase.firestore
+
+        db.collection("cars")
+            .document(car.id)
+            .update("isSoundOn", !car.isSoundOn)
+            .addOnSuccessListener {
+                car.isSoundOn = !car.isSoundOn
+                button.isSelected = !button.isSelected
             }
             .addOnFailureListener { exception ->
                 // 오류 처리
