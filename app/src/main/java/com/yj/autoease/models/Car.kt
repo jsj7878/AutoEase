@@ -6,6 +6,7 @@ data class Car(
     val vehicleNumber: String = "",
     var isPowerOn: Boolean = false,
     var isDoorOpen: Boolean = false,
+    var isSoundOn: Boolean = false,
     var temperature: Double = 0.0,
     var fuel: Int = 0,
     var tirePressure: Int = 0,
